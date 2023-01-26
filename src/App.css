@@ -1,0 +1,142 @@
+#root {
+  display: flex;
+  height: 100vh;
+  background: url("/Background.jpg") no-repeat center center / cover;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow: auto;
+}
+
+.Typing_test {
+  max-width: 800px;
+  margin: 200px auto 0;
+  padding: 50px;
+}
+
+.Typing_test .text {
+  width: 93%;
+  margin: 0 auto 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 2em;
+  line-height: 2em;
+  color: #383838;
+  transition: .2s;
+}
+
+.Typing_test .text__word__char--correct {
+  color: #323232;
+  background-color: #5bc538;
+  padding: 1px;
+}
+
+.Typing_test .text__word__char--incorrect {
+  color: #323232;
+  background-color: #F36747;
+  padding: 1px;
+}
+
+.Typing_test .input {
+  width: 100%;
+  margin-bottom: 25px;
+  transform: translateX(-2px);
+  text-align: center;
+  line-height: 2em;
+  font-size: 2em;
+  border: none;
+  border-radius: 50px;
+  color: #213547;
+  background-color: #EFEFEF4D;
+  box-shadow: #a0a0a0 0 0 2px 0;
+  transition: 50ms;
+}
+
+.Typing_test input:focus {
+  outline: none;
+  box-shadow: #a0a0a0 0 0 7px 0;
+  background-color: #FFFFFF60;
+  transition: 50ms;
+}
+
+.Typing_test .results {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 1.05em;
+}
+
+.Typing_test .results__speed,
+.Typing_test .results__accuracy {
+  display: inline;
+  justify-self: center;
+  width: 50%;
+}
+
+.Typing_test .time {
+  margin-bottom: 25px;
+  font-size: 1.05em;
+}
+
+.Typing_test .start {
+  padding: 20px 50px;
+  background-color: #EFEFEF4D;
+  box-shadow: #a0a0a0 0 0 2px 0;
+}
+
+.Leaderboard {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  white-space: nowrap;
+  font-size: 1.05em;
+}
+
+.Leaderboard .header > h4 {
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+
+.Leaderboard .row__date,
+.Leaderboard .row__speed,
+.Leaderboard .row__accuracy {
+  display: inline-block;
+  padding-top: 1px;
+  line-height: 1.8em;
+  border-bottom: 1px solid black;
+}
+
+.Leaderboard .date,
+.Leaderboard .speed,
+.Leaderboard .accuracy {
+  width: 20%;
+  min-width: 90px;
+  max-width: 120px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    transition: 0.5s;
+  }
+
+  .Typing_test {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Typing_test {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

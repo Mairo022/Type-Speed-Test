@@ -116,12 +116,10 @@ function TypingTest(props: ITypingTest): JSX.Element {
     function handleText(text: Array<string>) {
         if (!text) return
 
-        const regexWord = new RegExp(/([\w.]+(?:[\s.!,]|['][\w.]+\s))/)
+        const regexWord = new RegExp(/(?<=\s|^[\w.,]+(?:[\s.!,]|['][\w.]+\s))/)
         const shuffledText = shuffleArray(text).join("")
 
-        const words: Array<string> = shuffledText
-            .split(regexWord)
-            .filter(word => word !== "")
+        const words: Array<string> = shuffledText.split(regexWord)
 
         const wordState: IWordState[] = words[wordPos]
             .split("")
